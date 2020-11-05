@@ -45,7 +45,7 @@ const unflatten = (obj, delimiter) => {
     Object.keys(original).forEach((key) => {
       const newKeys = key.split(seperator)
       newKeys.reduce((o, k, i) => {
-        if (newKeys[i] === '__proto__' || newKeys[i] === 'constructor' || newKeys[i] === 'prototype') {
+        if (k === '__proto__' || k === 'constructor' || k === 'prototype') {
           return o;
         }
 
